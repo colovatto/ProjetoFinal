@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjetoFinal</title>
+    
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    
+</head>
+
+<header>
+    <section class="cabecalho">
+        <a href="telainicial.html">
+
+            <img src="/lib/hoda.png" alt="Logo">
+        </a>
+        <a href="telainicial.html">
+            <h1>HODA</h1>
+        </a>
+        <button type="submit" id="btn">Logoff</button>
+    </section>
+</header>
+
+<body>
+
+    <div class="pai">
+        <div id="config">
+            <span class="menu"></span>
+            <br>
+            <br>
+
+            <a asp-action="Create">Tickets</a>
+            <a asp-action="Index">Chamados</a>
+            <a href="configurações.html">Configurações</a>
+ 
+
+        </div>
+
+        <div class="format">
+
+            <form action="#" method="get">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+                @RenderBody()
+            </form>
+        </div>
+    </div>
+
+ 
+</body>
+
+<footer>
+    <div class="rodape">
+        <h4>DIREITOS</h4>
+        <br>
+        <p> HODA - 2023, todos os direitos reservados.</p>
+        <p>
+            Desenvolvido por: <a href="https://www.linkedin.com/in/victor-colovatto-borioli/" title="Victor">
+                Victor
+                Colovatto Borioli
+            </a>
+        </p>
+
+    </div>
+    <div class="rodape1">
+        <h4>CONTATO</h4>
+        <br>
+        <p>43 9 9822-9093</p>
+        <p>borioli_12@hotmail.com</p>
+        <p>Londrina - PR</p>
+    </div>
+
+    <div class="rodape2">
+        <h4>REDES SOCIAIS</h4>
+        <div class="divIcon">
+
+            <a href="#">
+                <img src="/lib/facebook.png" class="icone">
+            </a>
+            <a href="https://twitter.com/victorborioli">
+                <img src="/lib/twitter.png" class="icone">
+            </a>
+            <a href="">
+                <img src="/lib/instagram.png" class="icone">
+            </a>
+            <a href="https://github.com/colovatto">
+                <img src="/lib/github.png" class="icone">
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</html>

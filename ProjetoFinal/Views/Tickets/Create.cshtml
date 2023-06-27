@@ -1,0 +1,63 @@
+﻿@model ProjetoFinal.Ticket
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ticket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TicketNome" class="control-label"></label>
+                <input asp-for="TicketNome" class="form-control" />
+                <span asp-validation-for="TicketNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketEmail" class="control-label"></label>
+                <input asp-for="TicketEmail" class="form-control" />
+                <span asp-validation-for="TicketEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketTel" class="control-label"></label>
+                <input asp-for="TicketTel" class="form-control" />
+                <span asp-validation-for="TicketTel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketHora" class="control-label"></label>
+                <input asp-for="TicketHora" class="form-control" />
+                <span asp-validation-for="TicketHora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketEvidencia" class="control-label"></label>
+                <input asp-for="TicketEvidencia" class="form-control" />
+                <span asp-validation-for="TicketEvidencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketCategoria" class="control-label"></label>
+                <input asp-for="TicketCategoria" class="form-control" />
+                <span asp-validation-for="TicketCategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketDescricao" class="control-label"></label>
+                <textarea asp-for="TicketDescricao" class="form-control"></textarea>
+                <span asp-validation-for="TicketDescricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,154 @@
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+img {
+    height: 60px;
+    padding: 10px;
+}
+
+header {
+    background-image: linear-gradient( 100deg, #dddddd, blue);
+    width: 100%;
+}
+
+body {
+    background-image: linear-gradient( 100deg, #dddddd, blue);
+}
+
+
+#btn {
+    margin-left: auto;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 100px;
+    padding: 5px;
+    margin-right: 5px;
+    height: 25px;
+    text-transform: uppercase;
+    background-image: linear-gradient(80deg, #dddddd, rgb(0, 119, 255) );
+}
+
+    #btn:hover {
+        box-shadow: 4px 5px 4px black;
+        background-image: linear-gradient(80deg, rgb(0, 119, 255), #dddddd );
+    }
+
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.pai {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+
+#config h2 {
+    padding: 30px 0 0 0;
+    cursor: pointer;
+}
+
+#config a {
+    padding: 10px;
+    font-size: 22px;
+    display: block;
+    text-decoration: none;
+    outline: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+    #config a:hover {
+        background-color: white;
+        color: black;
+        border-top-left-radius: 70px;
+        border-bottom-left-radius: 70px;
+    }
+
+#config {
+    text-decoration: none;
+    width: 15vw;
+    height: 80vh;
+    background-image: linear-gradient(30deg, #2d11cf, #05585e);
+    border-top-right-radius: 90px;
+    border-bottom-right-radius: 90px;
+}
+
+.format {
+    height: 80vh;
+    width: 85vw;
+    margin-left: 5px;
+    background-color: #f8eeee;
+    border-radius: 70px;
+}
+
+
+footer {
+    background-color: transparent;
+    width: 99vw;
+    padding: 5px;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+}
+
+p {
+    white-space: nowrap;
+}
+
+
+
+.rodape {
+    width: 33vw;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 5px;
+}
+
+
+
+.rodape1 {
+    width: 33vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.rodape2 {
+    width: 33vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center end;
+    align-items: center;
+    padding: 5px;
+}
+
+.divIcon {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+}
+
+.icone {
+    height: 50px;
+}
