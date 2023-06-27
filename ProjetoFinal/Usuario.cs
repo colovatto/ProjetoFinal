@@ -8,7 +8,7 @@ public partial class Usuario
 {
     public int UserId { get; set; }
 
-    [Display(Name = "Nome")]
+    [Display(Name = "Nome Completo")]
     public string UserNome { get; set; } = null!;
 
     [Display(Name = "Login")]

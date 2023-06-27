@@ -9,6 +9,36 @@
 <p>
     <a asp-action="Create">Criar Usuário</a>
 </p>
+
+<div>
+    @using (Html.BeginForm("Index","Usuarios", FormMethod.Get))
+    {
+        <table>
+            <tr>
+                <td>
+                    <span>Pesquisar Por:</span>
+                    @Html.RadioButton("searchBy", "UserNome", true)
+                    <text> Nome do Usuário </text>                    
+                    @Html.RadioButton("searchBy", "UserLogin")
+                    <text> Login do Usuário </text>            
+                    @Html.RadioButton("searchBy", "UserId")
+                    <text> Id do Usuário </text>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.TextBox("searchValue") <input type="submit" value=" Pesquisar"/>
+                </td>
+                <td>
+
+                </td>
+              
+            </tr>
+        </table>
+    }
+</div>
+
+<br />
 <table class="table">
     <thead>
         <tr>

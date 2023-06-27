@@ -18,12 +18,36 @@ namespace ProjetoFinal.Controllers
             _context = context;
         }
 
-        // GET: Tickets
-        public async Task<IActionResult> Index()
+        // GET: Filtrar Tickets
+       
+        public async Task<IActionResult> Index(string search)
         {
-              return _context.Tickets != null ? 
-                          View(await _context.Tickets.ToListAsync()) :
-                          Problem("Entity set 'ServiceDeskContext.Tickets'  is null.");
+              if(_context.Tickets == null)
+            {
+                Problem("Entity set 'ServiceDeskContext.Tickets'  is null.");
+            }
+
+            var tickets = from t in _context.Tickets select t; //selecionar tickets
+
+            if (!String.IsNullOrEmpty(search))
+            {
+                tickets = tickets.Where(s => s.TicketCategoria!.Contains(search)); //consulta por categoria
+            }
+            
+            
+            else if (!String.IsNullOrEmpty(search))
+            {
+                tickets = tickets.Where(s => s.TicketNome!.Contains(search)); //consulta por categoria
+            }
+            return View(await tickets.ToListAsync());
+
+
+        }
+
+        [HttpPost]
+        public string Index(string search, bool notUsed)
+        {
+            return "From[HttpPost]Index: filter on " + search;
         }
 
         // GET: Tickets/Details/5

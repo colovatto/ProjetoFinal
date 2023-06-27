@@ -18,8 +18,8 @@ namespace ProjetoFinal.Controllers
             _context = context;
         }
 
-        // GET: Usuarios
-        public async Task<IActionResult> Index()
+        //Search Method
+        public async Task<IActionResult> Index(string Search)
         {
               return _context.Usuarios != null ? 
                           View(await _context.Usuarios.ToListAsync()) :
