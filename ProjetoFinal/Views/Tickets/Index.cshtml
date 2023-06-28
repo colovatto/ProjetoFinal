@@ -12,7 +12,8 @@
 
 <form asp-controller="Tickets" asp-action="Index" method="get">
     <p>
-        Categoria: <input type="text" name="search"/>
+        <input type="text" name="id" placeholder="Pesquisar INC"/>
+        <input type="text" name="search" placeholder="Nome ou Descrição"/>
         <input type="submit" value="Filtro"/>
     </p>
 
@@ -20,6 +21,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketId)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.TicketNome)
             </th>
@@ -46,7 +50,11 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            var conc = "INC00" + item.TicketId;
+            <tr>
+            <td>
+                @Html.DisplayFor(modelItem => conc)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TicketNome)
             </td>

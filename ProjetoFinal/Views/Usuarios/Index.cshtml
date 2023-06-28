@@ -9,39 +9,21 @@
 <p>
     <a asp-action="Create">Criar Usuário</a>
 </p>
+<form asp-controller="Usuarios" asp-action="Index" method="get">
+    <p>
+        <input type="text" name="search" placeholder="Nome ou Login" />
+        <input type="submit" value="Filtro" />
+    </p>
 
-<div>
-    @using (Html.BeginForm("Index","Usuarios", FormMethod.Get))
-    {
-        <table>
-            <tr>
-                <td>
-                    <span>Pesquisar Por:</span>
-                    @Html.RadioButton("searchBy", "UserNome", true)
-                    <text> Nome do Usuário </text>                    
-                    @Html.RadioButton("searchBy", "UserLogin")
-                    <text> Login do Usuário </text>            
-                    @Html.RadioButton("searchBy", "UserId")
-                    <text> Id do Usuário </text>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.TextBox("searchValue") <input type="submit" value=" Pesquisar"/>
-                </td>
-                <td>
-
-                </td>
-              
-            </tr>
-        </table>
-    }
-</div>
+</form>
 
 <br />
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.UserNome)
             </th>
@@ -58,6 +40,9 @@
 
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UserNome)
             </td>

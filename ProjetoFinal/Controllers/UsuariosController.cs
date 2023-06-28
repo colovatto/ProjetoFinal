@@ -19,12 +19,31 @@ namespace ProjetoFinal.Controllers
         }
 
         //Search Method
-        public async Task<IActionResult> Index(string Search)
+        public async Task<IActionResult> Index(string search)
         {
-              return _context.Usuarios != null ? 
-                          View(await _context.Usuarios.ToListAsync()) :
-                          Problem("Entity set 'ServiceDeskContext.Usuarios'  is null.");
+            if (_context.Usuarios == null)
+            {
+                Problem("Entity set 'ServiceDeskContext.Usuarios'  is null.");
+            }
+
+            var usuarios = from u in _context.Usuarios select u; //selecionar tickets
+
+            if (!String.IsNullOrEmpty(search))
+            {
+                usuarios = usuarios.Where(s => s.UserNome!.Contains(search) || s.UserLogin!.Contains(search)); //consulta por categoria
+            }
+
+            return View(await usuarios.ToListAsync());
+
+
         }
+
+        [HttpPost]
+        public string Index(string search, bool notUsed)
+        {
+            return "From[HttpPost]Index: filter on " + search;
+        }
+
 
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)

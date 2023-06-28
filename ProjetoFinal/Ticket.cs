@@ -6,7 +6,7 @@ namespace ProjetoFinal;
 
 public partial class Ticket
 {
-    [Display(Name = "Chamado")]
+    [Display(Name = "Ticket")]
     public int TicketId { get; set; }
 
     [Display(Name = "Nome")]

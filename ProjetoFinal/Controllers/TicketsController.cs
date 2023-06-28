@@ -20,27 +20,27 @@ namespace ProjetoFinal.Controllers
 
         // GET: Filtrar Tickets
        
-        public async Task<IActionResult> Index(string search)
+        public async Task<IActionResult> Index(string search, int? Id)
         {
               if(_context.Tickets == null)
-            {
-                Problem("Entity set 'ServiceDeskContext.Tickets'  is null.");
-            }
+              {
+                 Problem("Entity set 'ServiceDeskContext.Tickets'  is null.");
+              }
 
             var tickets = from t in _context.Tickets select t; //selecionar tickets
 
+            if(Id.HasValue)
+            {
+                var ticketsId = Id.Value;
+                tickets = tickets.Where(s => s.TicketId == ticketsId);
+            }
+
             if (!String.IsNullOrEmpty(search))
             {
-                tickets = tickets.Where(s => s.TicketCategoria!.Contains(search)); //consulta por categoria
+                tickets = tickets.Where(s => s.TicketCategoria!.Contains(search) || s.TicketNome!.Contains(search)); //consulta por categoria
             }
             
-            
-            else if (!String.IsNullOrEmpty(search))
-            {
-                tickets = tickets.Where(s => s.TicketNome!.Contains(search)); //consulta por categoria
-            }
             return View(await tickets.ToListAsync());
-
 
         }
 
