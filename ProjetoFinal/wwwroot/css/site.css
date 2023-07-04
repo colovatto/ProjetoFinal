@@ -20,43 +20,32 @@ body {
     background-image: linear-gradient( 100deg, #dddddd, blue);
 }
 
-
-#btn {
-    margin-left: auto;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 10px;
-    width: 100px;
-    padding: 5px;
-    margin-right: 5px;
-    height: 25px;
-    text-transform: uppercase;
-    background-image: linear-gradient(80deg, #dddddd, rgb(0, 119, 255) );
-}
-
-    #btn:hover {
-        box-shadow: 4px 5px 4px black;
-        background-image: linear-gradient(80deg, rgb(0, 119, 255), #dddddd );
-    }
-
-
 a {
     text-decoration: none;
     outline: none;
+    color: white
 }
+
+a:hover{
+    color: black;
+}
+
 
 .cabecalho {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.container {
+   
+}
 
 
 .pai {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: left;
     margin-top: 5px;
 }
 
@@ -76,38 +65,18 @@ a {
     color: white;
 }
 
-    #config a:hover {
-        background-color: white;
-        color: black;
-        border-top-left-radius: 70px;
-        border-bottom-left-radius: 70px;
-    }
-
-#config {
-    text-decoration: none;
-    width: 15vw;
-    height: 80vh;
-    background-image: linear-gradient(30deg, #2d11cf, #05585e);
-    border-top-right-radius: 90px;
-    border-bottom-right-radius: 90px;
-}
-
-.format {
-    height: 80vh;
-    width: 85vw;
-    margin-left: 5px;
-    background-color: #f8eeee;
-    border-radius: 70px;
-}
 
 
 footer {
     background-color: transparent;
     width: 99vw;
+    height: 20vh;
     padding: 5px;
     height: 5vh;
     display: flex;
     flex-direction: row;
+    color: black;
+    background-image: linear-gradient( 100deg, #dddddd, blue);
 }
 
 p {

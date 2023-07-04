@@ -18,7 +18,7 @@ namespace ProjetoFinal.Controllers
             _context = context;
         }
 
-        // GET: Filtrar Tickets
+        //Search Method
        
         public async Task<IActionResult> Index(string search, int? Id)
         {
@@ -79,10 +79,15 @@ namespace ProjetoFinal.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TicketId,TicketNome,TicketEmail,TicketTel,TicketHora,TicketEvidencia,TicketCategoria,TicketDescricao")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("TicketId,TicketNome,TicketEmail,TicketTel,TicketHora,TicketEvidencia,TicketCategoria,TicketDescricao")] Ticket ticket, IFormFile ImageFile)
         {
             if (ModelState.IsValid)
             {
+                using (var ms = new MemoryStream())
+                {
+                    ImageFile.CopyTo(ms);
+                    ticket.TicketEvidencia = ms.ToArray();
+                }
                 _context.Add(ticket);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

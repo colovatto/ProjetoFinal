@@ -229,11 +229,11 @@ sup {
 }
 
 a {
-  color: #0d6efd;
+  color: black;
   text-decoration: underline;
 }
 a:hover {
-  color: #0a58ca;
+  color: black;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -582,7 +582,7 @@ progress {
   margin-top: -1rem;
   margin-bottom: 1rem;
   font-size: 0.875em;
-  color: #6c757d;
+  color: #000;
 }
 .blockquote-footer::before {
   content: "— ";
@@ -5382,9 +5382,7 @@ textarea.form-control-lg {
   max-width: 100%;
   pointer-events: none;
 }
-.toast-container > :not(:last-child) {
-  margin-bottom: 0.75rem;
-}
+
 
 .toast-header {
   display: flex;
@@ -5525,9 +5523,7 @@ textarea.form-control-lg {
   border-bottom-right-radius: calc(0.3rem - 1px);
   border-bottom-left-radius: calc(0.3rem - 1px);
 }
-.modal-footer > * {
-  margin: 0.25rem;
-}
+
 
 @media (min-width: 576px) {
   .modal-dialog {
@@ -7704,7 +7700,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+  color: #000 !important;
 }
 
 .text-black-50 {

@@ -11,6 +11,7 @@
 </p>
 <form asp-controller="Usuarios" asp-action="Index" method="get">
     <p>
+        <input type="text" name="id" placeholder="Pesquisar Usuário" />
         <input type="text" name="search" placeholder="Nome ou Login" />
         <input type="submit" value="Filtro" />
     </p>
@@ -29,10 +30,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.UserLogin)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserSenha)
-            </th>
+            </th>            
             <th></th>
         </tr>
     </thead>
@@ -50,10 +48,7 @@
                 @Html.DisplayFor(modelItem => item.UserLogin)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserSenha)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.UserId">Editar Usuário</a> | 
+                <a asp-action="Edit" asp-route-id="@item.UserId">Editar Usuário</a> |
                 <a asp-action="Details" asp-route-id="@item.UserId">Exibir Usuário</a> | 
                 <a asp-action="Delete" asp-route-id="@item.UserId">Deletar Usuário</a>
             </td>

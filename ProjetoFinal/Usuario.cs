@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjetoFinal;
 
@@ -20,4 +21,10 @@ public partial class Usuario
     [StringLength(16, ErrorMessage = "Senha entre 8 e 16 caracteres ", MinimumLength = 8)]
     [Display(Name = "Senha")]
     public string UserSenha { get; set; } = null!;
+
+    [NotMapped]
+    [Display(Name ="Confirmar Senha")]
+    [Compare("UserSenha")]
+    public string ConfirmPassword { get; set; }
+
 }

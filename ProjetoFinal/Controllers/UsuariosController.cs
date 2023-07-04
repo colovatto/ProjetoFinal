@@ -19,14 +19,20 @@ namespace ProjetoFinal.Controllers
         }
 
         //Search Method
-        public async Task<IActionResult> Index(string search)
+        public async Task<IActionResult> Index(string search, int? Id)
         {
             if (_context.Usuarios == null)
             {
                 Problem("Entity set 'ServiceDeskContext.Usuarios'  is null.");
             }
 
-            var usuarios = from u in _context.Usuarios select u; //selecionar tickets
+            var usuarios = from u in _context.Usuarios select u; //selecionar usuários
+
+            if (Id.HasValue)
+            {
+                var ticketsId = Id.Value;
+                usuarios = usuarios.Where(s => s.UserId == ticketsId);
+            }
 
             if (!String.IsNullOrEmpty(search))
             {
@@ -43,6 +49,8 @@ namespace ProjetoFinal.Controllers
         {
             return "From[HttpPost]Index: filter on " + search;
         }
+
+        
 
 
         // GET: Usuarios/Details/5
@@ -85,7 +93,7 @@ namespace ProjetoFinal.Controllers
             return View(usuario);
         }
 
-        // GET: Usuarios/Edit/5
+        // Editar Get
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Usuarios == null)
@@ -101,9 +109,7 @@ namespace ProjetoFinal.Controllers
             return View(usuario);
         }
 
-        // POST: Usuarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Editar Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("UserId,UserNome,UserLogin,UserSenha")] Usuario usuario)
@@ -136,7 +142,7 @@ namespace ProjetoFinal.Controllers
             return View(usuario);
         }
 
-        // GET: Usuarios/Delete/5
+        // Deletar Get
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Usuarios == null)
@@ -154,7 +160,7 @@ namespace ProjetoFinal.Controllers
             return View(usuario);
         }
 
-        // POST: Usuarios/Delete/5
+        // Deletar Post
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
