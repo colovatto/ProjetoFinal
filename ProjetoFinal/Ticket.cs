@@ -15,7 +15,8 @@ public partial class Ticket
     [Display(Name = "Email")]
     public string TicketEmail { get; set; } = null!;
 
-    [Display(Name = "Telefone / Ramal")]
+    [Display(Name = "Telefone / Ramal")]   
+    [RegularExpression(@"^\(?([0-9]{2})\)?[-. ]?([0-9]{5})[-. ]?([0-9]{4})$", ErrorMessage = "Telefone não é valido")]
     public string TicketTel { get; set; } = null!;
 
     [Display(Name = "Horário de Trabalho")]

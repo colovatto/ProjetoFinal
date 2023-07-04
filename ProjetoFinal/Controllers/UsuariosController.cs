@@ -53,7 +53,7 @@ namespace ProjetoFinal.Controllers
         
 
 
-        // GET: Usuarios/Details/5
+        // Exibir Get
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Usuarios == null)
@@ -71,15 +71,13 @@ namespace ProjetoFinal.Controllers
             return View(usuario);
         }
 
-        // GET: Usuarios/Create
+        // Criar Get
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Usuarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Criar Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("UserId,UserNome,UserLogin,UserSenha")] Usuario usuario)

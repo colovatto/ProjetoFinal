@@ -8,70 +8,70 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/teste.styles.css" asp-append-version="true" />
 </head>
+
 <body>
     <header>
         <div class="cabecalho">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HODA</a>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HODA</a>
                     <img src="~/lib/hoda.png" alt="Logo">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Index">Tickets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuários</a>
-                        </li>
-                    </ul>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Index">Tickets</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuários</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
         </div>
     </header>
 
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="main">
             @RenderBody()
         </main>
     </div>
     <br />
-
     <footer class="footer">
-       
-            <div class="rodape">
-                <h5>DIREITOS</h5>
-                <br>
+
+        <div class="rodape">
+            <h5>DIREITOS</h5>
+            <br>
             &copy; 2023 - HODA. Todos os direitos reservados
-                <p>
-                    Desenvolvido por: <a href="https://www.linkedin.com/in/victor-colovatto-borioli/" title="Victor">
-                        Victor
-                        Colovatto Borioli
-                    </a>
-                </p>
+            <p>
+                Desenvolvido por: <a href="https://www.linkedin.com/in/victor-colovatto-borioli/" title="Victor">
+                    Victor
+                    Colovatto Borioli
+                </a>
+            </p>
 
-            </div>
-            <div class="rodape1">
-                <h5>CONTATO</h5>
-                <br>
-                <p>43 9 9822-9093</p>
-                <p>borioli_12@hotmail.com</p>
-                <p>Londrina - PR</p>
-            </div>
+        </div>
+        <div class="rodape1">
+            <h5>CONTATO</h5>
+            <br>
+            <p>43 9 9822-9093</p>
+            <p>borioli_12@hotmail.com</p>
+            <p>Londrina - PR</p>
+        </div>
 
-            <div class="rodape2">
-                <h5>REDES SOCIAIS</h5>
-                <div class="divIcon">
+        <div class="rodape2">
+            <h5>REDES SOCIAIS</h5>
+            <div class="divIcon">
 
                 <a href="https://www.facebook.com/victor.colovatto/" target="_blank" <span></span>
                         <img src="~/lib/facebook.png" class="icone">
@@ -85,14 +85,19 @@
                 <a href="https://github.com/colovatto" target="_blank" <span></span>
                         <img src="~/lib/github.png" class="icone">
                     </a>
-                </div>
             </div>
+        </div>
+
 
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    
 </body>
+
+
 </html>
 

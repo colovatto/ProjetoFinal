@@ -1,0 +1,22 @@
+﻿input:not([type="submit"]) {
+    height: 25px;
+    width: 200px;
+    outline: none;
+    border: 2px solid #2c2828;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.filtro {
+    height:30px;
+    width: 90px;
+    align-items: center;
+    align-content: center;
+    outline: none;
+    border: 2px solid #2c2828;
+    border-radius: 4px;
+    margin-top:auto
+   
+}
+
+

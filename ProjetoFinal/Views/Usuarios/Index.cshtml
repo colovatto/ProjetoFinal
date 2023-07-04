@@ -3,17 +3,17 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<link rel="stylesheet" href="~/css/pesquisa.css" asp-append-version="true" />
 <h1>Usuário</h1>
 
 <p>
-    <a asp-action="Create">Criar Usuário</a>
+    <h4><a asp-action="Create">Criar Usuário</a></h4>
 </p>
 <form asp-controller="Usuarios" asp-action="Index" method="get">
     <p>
         <input type="text" name="id" placeholder="Pesquisar Usuário" />
         <input type="text" name="search" placeholder="Nome ou Login" />
-        <input type="submit" value="Filtro" />
+        <input type="submit" value="Filtro" class="filtro"/>
     </p>
 
 </form>

@@ -4,17 +4,21 @@
     ViewData["Title"] = "Index";
 }
 
+<link rel="stylesheet" href="~/css/pesquisa.css" asp-append-version="true" />
+
 <h1>Tickets</h1>
 
 <p>
-    <a asp-action="Create">Novo Ticket</a>
+    <h4><a asp-action="Create">Novo Ticket</a></h4>
 </p>
 
 <form asp-controller="Tickets" asp-action="Index" method="get">
     <p>
+        
         <input type="text" name="id" placeholder="Pesquisar INC"/>
         <input type="text" name="search" placeholder="Nome ou Descrição"/>
-        <input type="submit" value="Filtro"/>
+        <input type="submit" value="Pesquisar" class="filtro"/>
+        
     </p>
 
 </form>
@@ -29,16 +33,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TicketEmail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TicketTel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TicketHora)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TicketEvidencia)
-            </th>
+            </th>      
             <th>
                 @Html.DisplayNameFor(model => model.TicketCategoria)
             </th>
@@ -60,26 +55,17 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TicketEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TicketTel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TicketHora)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TicketEvidencia)
-            </td>
+            </td>         
             <td>
                 @Html.DisplayFor(modelItem => item.TicketCategoria)
             </td>
-            <td>
+            <td>                
                 @Html.DisplayFor(modelItem => item.TicketDescricao)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TicketId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TicketId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TicketId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.TicketId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.TicketId">Exibir</a> |
+                <a asp-action="Delete" asp-route-id="@item.TicketId">Deletar</a>
             </td>
         </tr>
 }

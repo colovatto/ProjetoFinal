@@ -79,15 +79,10 @@ namespace ProjetoFinal.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TicketId,TicketNome,TicketEmail,TicketTel,TicketHora,TicketEvidencia,TicketCategoria,TicketDescricao")] Ticket ticket, IFormFile ImageFile)
+        public async Task<IActionResult> Create([Bind("TicketId,TicketNome,TicketEmail,TicketTel,TicketHora,TicketEvidencia,TicketCategoria,TicketDescricao")] Ticket ticket)
         {
             if (ModelState.IsValid)
-            {
-                using (var ms = new MemoryStream())
-                {
-                    ImageFile.CopyTo(ms);
-                    ticket.TicketEvidencia = ms.ToArray();
-                }
+            {             
                 _context.Add(ticket);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
