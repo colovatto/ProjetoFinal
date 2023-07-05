@@ -1,5 +1,13 @@
 # ProjetoFinal
 
+Victor Colovatto Borioli é o criador do sistema, com o propósito de implementar um projeto para a finalização da Academia de .Net da Atos em parceria com a UFN.
+Estudante de Análise e Desenvolvimento de Sistemas, técnico em Informática pelo SENAI e atualmente trabalhando na Atos como analista de Service Desk procura solucionar alguns problemas nas aplicações de Help Desk, como a complexidade dos sistemas e a lentidão.
+
+
+
+
+===============================================================================================================================================================
+
 Realizar criação de banco de dados no sql server:
 
 create database ServiceDesk
