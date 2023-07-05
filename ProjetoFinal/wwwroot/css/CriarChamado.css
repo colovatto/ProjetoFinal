@@ -1,12 +1,19 @@
-﻿.bgimg {
+﻿
+/*configuração da imagem de fundo da home*/
+.bgimg  {
     
     background-image: url("../lib/sd.jpg");   
     height: 100%; 
     background-position: center;    
     background-size: cover;    
     position: relative;
-    color: black;   
+    color: black;      
     font-size: 25px;
-    border-radius: 7%
+    border-radius: 7%;
+    padding: 15px;
+    
+ 
 }
+
+
 

@@ -1,13 +1,13 @@
 ﻿@model ProjetoFinal.Usuario
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Exibir";
 }
 
-<h1>Details</h1>
+<h1 class="text-center"><b>Dados do Usuário</b></h1>
 
 <div>
-    <h4>Usuario</h4>
+    <h4>ID @Html.DisplayFor(model => model.UserId)</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -27,6 +27,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.UserId">Editar Usuário</a> |
-    <a asp-action="Index">Voltar para Usuários</a>
+    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model?.UserId">Editar Usuário</a> |
+    <a asp-action="Index" class="btn btn-outline-primary">Voltar para Usuários </a>
 </div>

@@ -15,7 +15,7 @@ namespace ProjetoFinal.Controllers
 
         public UsuariosController(ServiceDeskContext context)
         {
-            _context = context;
+            _context = context; //declara a variavel do db
         }
 
         //Search Method

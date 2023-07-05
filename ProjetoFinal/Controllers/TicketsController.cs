@@ -32,15 +32,15 @@ namespace ProjetoFinal.Controllers
             if(Id.HasValue)
             {
                 var ticketsId = Id.Value;
-                tickets = tickets.Where(s => s.TicketId == ticketsId);
+                tickets = tickets.Where(s => s.TicketId == ticketsId); //procura por Id
             }
 
             if (!String.IsNullOrEmpty(search))
             {
-                tickets = tickets.Where(s => s.TicketCategoria!.Contains(search) || s.TicketNome!.Contains(search)); //consulta por categoria
+                tickets = tickets.Where(s => s.TicketCategoria!.Contains(search) || s.TicketNome!.Contains(search)); //consulta pelos parametros estabelecidos
             }
             
-            return View(await tickets.ToListAsync());
+            return View(await tickets.ToListAsync()); //apresenta o tickt
 
         }
 
@@ -50,16 +50,16 @@ namespace ProjetoFinal.Controllers
             return "From[HttpPost]Index: filter on " + search;
         }
 
-        // GET: Tickets/Details/5
+        // Exibir Get
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Tickets == null)
+            if (id == null || _context.Tickets == null) //compara se não apresenta Id
             {
-                return NotFound();
+                return NotFound(); //apresenta nenhuma opção
             }
 
             var ticket = await _context.Tickets
-                .FirstOrDefaultAsync(m => m.TicketId == id);
+                .FirstOrDefaultAsync(m => m.TicketId == id); //mostra o primeiro ticket com o Id selecionado
             if (ticket == null)
             {
                 return NotFound();
@@ -68,29 +68,27 @@ namespace ProjetoFinal.Controllers
             return View(ticket);
         }
 
-        // GET: Tickets/Create
+        // Criar Get
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Tickets/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Criar Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TicketId,TicketNome,TicketEmail,TicketTel,TicketHora,TicketEvidencia,TicketCategoria,TicketDescricao")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {             
-                _context.Add(ticket);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                _context.Add(ticket); //adiciona os dados a table ticket
+                await _context.SaveChangesAsync(); //salva dados
+                return RedirectToAction(nameof(Index)); //retorna a Index da controller
             }
             return View(ticket);
         }
 
-        // GET: Tickets/Edit/5
+        // Editar Get
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Tickets == null)
@@ -98,7 +96,7 @@ namespace ProjetoFinal.Controllers
                 return NotFound();
             }
 
-            var ticket = await _context.Tickets.FindAsync(id);
+            var ticket = await _context.Tickets.FindAsync(id);  //busca pelo Id selecionado
             if (ticket == null)
             {
                 return NotFound();
@@ -106,14 +104,13 @@ namespace ProjetoFinal.Controllers
             return View(ticket);
         }
 
-        // POST: Tickets/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        // Editar Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("TicketId,TicketNome,TicketEmail,TicketTel,TicketHora,TicketEvidencia,TicketCategoria,TicketDescricao")] Ticket ticket)
         {
-            if (id != ticket.TicketId)
+            if (id != ticket.TicketId) //se id for diferente do Ticket selecionado
             {
                 return NotFound();
             }
@@ -141,7 +138,7 @@ namespace ProjetoFinal.Controllers
             return View(ticket);
         }
 
-        // GET: Tickets/Delete/5
+        // Deletar Get
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Tickets == null)
@@ -159,22 +156,22 @@ namespace ProjetoFinal.Controllers
             return View(ticket);
         }
 
-        // POST: Tickets/Delete/5
+        // Deletar Post
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Tickets == null)
+            if (_context.Tickets == null) //Se ticket não existir
             {
                 return Problem("Entity set 'ServiceDeskContext.Tickets'  is null.");
             }
             var ticket = await _context.Tickets.FindAsync(id);
-            if (ticket != null)
+            if (ticket != null) //caso diferente de nulo
             {
-                _context.Tickets.Remove(ticket);
+                _context.Tickets.Remove(ticket); //remove do banco
             }
             
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(); //salva as opções
             return RedirectToAction(nameof(Index));
         }
 

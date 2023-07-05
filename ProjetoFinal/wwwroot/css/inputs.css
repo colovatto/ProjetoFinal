@@ -1,0 +1,13 @@
+﻿
+/*configuração do input*/
+input:not([type="submit"]) {
+    height: 40px;
+    width: 350px;
+    outline: none;
+    text-decoration: none;    
+    border-radius: 4px;
+    padding: 5px;
+}
+
+
+

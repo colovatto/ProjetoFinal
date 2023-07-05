@@ -5,9 +5,9 @@
     ViewData["Title"] = "Criar Usuário";
 }
 
+<link rel="stylesheet" href="~/css/inputs.css" asp-append-version="true" />
 
-
-<h1>Criar Usuário</h1>
+<h1 class="text-center fw-bold">Criar Usuário</h1>
 
 
 <hr />
@@ -33,14 +33,14 @@
                         
             <div class="form-group">
                 <br />
-                <input type="submit" value="Criar Usuário" id="buttonSave" class="btn btn-primary" />
+                <input type="submit" value="Criar Usuário" id="buttonSave" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Voltar</a>
+    <a asp-action="Index" class="btn btn-outline-primary">Voltar para Usuários</a>
 </div>
 
 @section Scripts {

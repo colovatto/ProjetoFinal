@@ -25,7 +25,7 @@ public partial class Ticket
     [Display(Name = "Evidência")]
     public byte[]? TicketEvidencia { get; set; }
 
-    [Display(Name = "Cetegoria")]
+    [Display(Name = "Categoria")]
     public string TicketCategoria { get; set; } = null!;
 
     [Display(Name = "Descrição")]

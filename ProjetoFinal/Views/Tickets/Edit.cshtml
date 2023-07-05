@@ -4,9 +4,10 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<link rel="stylesheet" href="~/css/inputs.css" asp-append-version="true" />
+<h1 class="text-center"><b>Editar Ticket</b></h1>
 
-<h4>Ticket</h4>
+<h4>INC @Html.DisplayFor(model => model.TicketId)</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,14 +15,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="TicketId" />
             <div class="form-group">
-                <label asp-for="TicketNome" class="control-label"></label>
-                <input asp-for="TicketNome" class="form-control" />
-                <span asp-validation-for="TicketNome" class="text-danger"></span>
+                <!--<label asp-for="TicketNome" class="control-label"></label>-->
+                <input type="hidden" asp-for="TicketNome" class="form-control" />
+                <!--<span asp-validation-for="TicketNome" class="text-danger"></span>-->
             </div>
             <div class="form-group">
-                <label asp-for="TicketEmail" class="control-label"></label>
-                <input asp-for="TicketEmail" class="form-control" />
-                <span asp-validation-for="TicketEmail" class="text-danger"></span>
+                <!--<label asp-for="TicketEmail" class="control-label"></label>-->
+                <input type="hidden" asp-for="TicketEmail" class="form-control" />
+                <!--<span asp-validation-for="TicketEmail" class="text-danger"></span>-->
             </div>
             <div class="form-group">
                 <label asp-for="TicketTel" class="control-label"></label>
@@ -33,30 +34,33 @@
                 <input asp-for="TicketHora" class="form-control" />
                 <span asp-validation-for="TicketHora" class="text-danger"></span>
             </div>
+            <!--
             <div class="form-group">
                 <label asp-for="TicketEvidencia" class="control-label"></label>
-                <input asp-for="TicketEvidencia" class="form-control" />
+                <input type="file" asp-for="TicketEvidencia" class="form-control" />
                 <span asp-validation-for="TicketEvidencia" class="text-danger"></span>
             </div>
+            -->
             <div class="form-group">
-                <label asp-for="TicketCategoria" class="control-label"></label>
-                <input asp-for="TicketCategoria" class="form-control" />
-                <span asp-validation-for="TicketCategoria" class="text-danger"></span>
+                <!--<label asp-for="TicketCategoria" class="control-label"></label>-->
+                <input type="hidden" asp-for="TicketCategoria" class="form-control" />
+                <!--<span asp-validation-for="TicketCategoria" class="text-danger"></span>-->
             </div>
             <div class="form-group">
                 <label asp-for="TicketDescricao" class="control-label"></label>
-                <input asp-for="TicketDescricao" class="form-control" />
+                <textarea asp-for="TicketDescricao" class="form-control" rows="5" cols="33"/></textarea>
                 <span asp-validation-for="TicketDescricao" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-primary ">Voltar para Tickets</a>
 </div>
 
 @section Scripts {

@@ -3,8 +3,8 @@
 @{
     ViewData["Title"] = "Criar Ticket";
 }
-
-<h1>Create</h1>
+<link rel="stylesheet" href="~/css/inputs.css" asp-append-version="true" />
+<h1 class="text-center fw-bold">Criar Ticket</h1>
 
 <h4>Ticket</h4>
 <hr />
@@ -14,48 +14,51 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="TicketNome" class="control-label"></label>
-                <input asp-for="TicketNome" class="form-control" />
+                <input asp-for="TicketNome" class="form-control" placeholder="ex: Maria Antonia" />
                 <span asp-validation-for="TicketNome" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TicketEmail" class="control-label"></label>
-                <input type="email" asp-for="TicketEmail" class="form-control" />
+                <input type="email" asp-for="TicketEmail" class="form-control" placeholder="ex: mariaantonia@atos.net" />
                 <span asp-validation-for="TicketEmail" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TicketTel" class="control-label"></label>
-                <input asp-for="TicketTel" class="form-control" />
+                <input asp-for="TicketTel" class="form-control" placeholder="ex: 11987651123"/>
                 <span asp-validation-for="TicketTel" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TicketHora" class="control-label"></label>
-                <input asp-for="TicketHora" class="form-control" />
+                <input asp-for="TicketHora" class="form-control" placeholder="ex: 8h às 14h"/>
                 <span asp-validation-for="TicketHora" class="text-danger"></span>
             </div>
+            <!--
             <div class="form-group">
                 <label asp-for="TicketEvidencia" class="control-label"></label>
                 <input type="file" asp-for="TicketEvidencia" name="ImageFile" class="form-control" />
                 <span asp-validation-for="TicketEvidencia" class="text-danger"></span>
             </div>
+            -->
             <div class="form-group">
                 <label asp-for="TicketCategoria" class="control-label"></label>
-                <input type="" asp-for="TicketCategoria" class="form-control" />
+                <input type="" asp-for="TicketCategoria" class="form-control" placeholder="ex: Falha SAP"/>
                 <span asp-validation-for="TicketCategoria" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TicketDescricao" class="control-label"></label>
-                <textarea asp-for="TicketDescricao" class="form-control"></textarea>
+                <textarea asp-for="TicketDescricao" class="form-control" rows="5"></textarea>
                 <span asp-validation-for="TicketDescricao" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Criar Ticket" id="buttonSave" class="btn btn-primary" />
+                <input type="submit" value="Criar Ticket" id="buttonSave" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-primary">Voltar para Tickets</a>
 </div>
 
 @section Scripts {

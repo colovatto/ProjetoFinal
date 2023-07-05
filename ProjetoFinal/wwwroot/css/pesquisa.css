@@ -1,5 +1,7 @@
-﻿input:not([type="submit"]) {
-    height: 25px;
+﻿
+/*configuração do input*/
+input:not([type="submit"]) {
+    height: 35px;
     width: 200px;
     outline: none;
     border: 2px solid #2c2828;
@@ -7,6 +9,7 @@
     padding: 5px;
 }
 
+/*class do input filtro*/
 .filtro {
     height:30px;
     width: 90px;
